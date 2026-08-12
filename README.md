@@ -9,6 +9,11 @@ layouts around task-focused panels such as the Auction House and decision
 prompts. It never sends input, queues
 gameplay commands, injects packets, or automates menu interaction.
 
+Combat command menus (`playermo`, `magic`, and `ability`) remain non-modal so
+opening them does not move chat or the right-side utility panels into the
+battlefield. Combat-specific positioning is handled by the individual display
+addons from read-only player engagement state.
+
 ## Install
 
 ```powershell
@@ -32,6 +37,9 @@ To load it automatically with an existing Ashita startup script:
 - `/amove status` — show the focused native menu and modal classification.
 - `/amove debug on` — print native menu transitions while developing profiles.
 - `/amove debug off` — stop transition logging.
+
+Menu transitions are silent by default and are only printed while debug logging
+is enabled.
 
 ## Spectral Focus integration
 

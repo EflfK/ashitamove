@@ -1,6 +1,6 @@
 addon.name      = 'ashitamove';
 addon.author    = 'EflfK';
-addon.version   = '0.1.1';
+addon.version   = '0.1.2';
 addon.desc      = 'Display-only native menu detection and Spectral Focus modal coordination for Ashita v4.';
 addon.link      = 'https://github.com/EflfK/ashitamove';
 
@@ -20,10 +20,10 @@ pcall(ffi.cdef, [[
 local MODAL_PATTERNS = {
     'auc',
     'inventor', 'loot', 'comyn', 'comment',
-    'magic', 'ability', 'mount', 'emote', 'magselec', 'jobcselu',
+    'mount', 'emote', 'magselec', 'jobcselu',
     'mogdoor', 'chatctrl', 'arealist', 'maplist', 'gmtell', 'merityn', 'roomlist',
     'fep', 'rmlo2', 'shopbuy', 'guildsho', 'shopmain', 'shopsell', 'abiselec',
-    'mogext', 'myroom', 'storage', 'mogpost', 'jobchang', 'playermo',
+    'mogext', 'myroom', 'storage', 'mogpost', 'jobchang',
 };
 
 local state = {
@@ -117,12 +117,11 @@ local function update_menu_state()
     local name = current_menu_name();
     if (name == state.name) then return; end
 
-    local was_modal = state.modal;
     state.name = name;
     state.modal = is_modal_menu(name);
     publish_state();
 
-    if (state.debug or state.modal or was_modal) then
+    if (state.debug) then
         log_info(('Menu: %s; modal: %s.'):fmt(
             state.name ~= '' and state.name or '(closed)',
             state.modal and 'yes' or 'no'));
