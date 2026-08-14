@@ -14,9 +14,9 @@ opening them does not move chat or the right-side utility panels into the
 battlefield. Combat-specific positioning is handled by the individual display
 addons from read-only player engagement state.
 
-The native inventory menu also remains non-modal because it does not overlap
-the normal chat layout. Other task-focused menus retain their existing modal
-classification.
+The native inventory and Auction House menus also remain non-modal because they
+do not overlap the normal chat layout. Other task-focused menus retain their
+existing modal classification.
 
 ## Install
 

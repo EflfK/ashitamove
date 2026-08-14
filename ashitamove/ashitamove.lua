@@ -1,6 +1,6 @@
 addon.name      = 'ashitamove';
 addon.author    = 'EflfK';
-addon.version   = '0.1.3';
+addon.version   = '0.1.4';
 addon.desc      = 'Display-only native menu detection and Spectral Focus modal coordination for Ashita v4.';
 addon.link      = 'https://github.com/EflfK/ashitamove';
 
@@ -18,7 +18,6 @@ pcall(ffi.cdef, [[
 ]]);
 
 local MODAL_PATTERNS = {
-    'auc',
     'loot', 'comyn', 'comment',
     'mount', 'emote', 'magselec', 'jobcselu',
     'mogdoor', 'chatctrl', 'arealist', 'maplist', 'gmtell', 'merityn', 'roomlist',
